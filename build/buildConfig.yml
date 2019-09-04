@@ -1,0 +1,19 @@
+#
+# -   name: < Name of the job, foo/bar would create job named bar inside folder foo >
+#     build: 
+#     - workDir: < Working directory of the app to be built >
+#       dockerFile: < Path to the dockerfile, optional, assumes Dockerfile in working directory if not provided >
+#       imageName: < Docker image name  >
+
+config:
+-   name: frontend/citizen
+    build:
+    - workDir: web/rainmaker/
+      dockerFile: web/rainmaker/docker/citizen/Dockerfile
+      imageName: citizen
+
+-   name: frontend/employee
+    build:
+    - workDir: web/rainmaker/
+      dockerFile: web/rainmaker/docker/employee/Dockerfile
+      imageName: employee
